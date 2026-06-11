@@ -3,8 +3,10 @@ kind: PrivateLoadZone
 metadata:
   name: azure-sandbox-zone
   namespace: k6-plz
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 spec:
-  token: grafana-k6-token # This matches the secret we injected manually
+  token: grafana-k6-token
   resources:
     limits:
       cpu: "1"
